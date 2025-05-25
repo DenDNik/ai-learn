@@ -37,7 +37,7 @@ while True:
 			plt.grid()
 			plt.show()
 			plt.figure(2)
-			plt.plot(plot_average_scores_per_game)
+			plt.plot(plot_scores)
 			plt.title("Score per game")
 			plt.xlabel("Iteration")
 			plt.ylabel("Score")
@@ -75,6 +75,7 @@ while True:
 	plot_scores.append(score)
 
 	if game_over == 1:
+		gained_scores = game.score
 		game.reset()
 		AI.numberOfGames += 1
 		loss = AI.train()
@@ -94,11 +95,10 @@ while True:
 			total_score += i
 		if total_game_rewards != -10:
 			plot_average_rewards_per_game.append(total_game_rewards)
-			plot_average_scores_per_game.append(total_score)
+			plot_scores.append(gained_score)
 			plot_choice_by_model.append(choice_by_model_count)
 			plot_random_choice.append(random_choice_count)
 		plot_rewards = []
-		plot_scores = []
 		choice_by_model_count = 0
 		random_choice_count = 0
 
