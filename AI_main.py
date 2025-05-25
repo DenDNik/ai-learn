@@ -95,7 +95,7 @@ while True:
 			total_score += i
 		if total_game_rewards != -10:
 			plot_average_rewards_per_game.append(total_game_rewards)
-			plot_scores.append(gained_score)
+			plot_scores.append(gained_scores)
 			plot_choice_by_model.append(choice_by_model_count)
 			plot_random_choice.append(random_choice_count)
 		plot_rewards = []
